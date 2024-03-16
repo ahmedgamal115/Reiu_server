@@ -36,6 +36,12 @@ const ordersSchema = new Schema({
             return (value && this.customWidth && this.customHeight);
         }
     },
+    customPrice: {
+        type: Number
+    },
+    comment: {
+        type: String
+    },
     discountCode:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Promocodes'

@@ -54,6 +54,8 @@ module.exports = gql`
         customHeight: Float
         customWidth: Float
         customeImage: String
+        customPrice: Float
+        comment: String
         discountCode: PromoCodes
         productOrder: [Product!]!
         createdAt: DateTime!
@@ -75,7 +77,7 @@ module.exports = gql`
         
         makeOrder( username: String!,phone: String!,otherPhone: String,
             address: String!,amount: [Float!]!, customHeight: Float,
-            customWidth: Float, customeImage: Upload,
+            customWidth: Float, customeImage: Upload, customPrice: Float, comment: String,
             discountCode: ID,productOrder: [ID!]): Orders!
         
         deliverOrder( id: ID! ): String!
