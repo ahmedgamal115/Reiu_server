@@ -167,6 +167,8 @@ module.exports = {
                 amount: args.amount,
                 customHeight: args.customHeight,
                 customWidth: args.customWidth,
+                customPrice: args.customPrice,
+                comment: args.comment,
                 customeImage: imageUrl ? imageUrl[0] : null,
                 discountCode: args.discountCode,
                 productOrder: args.productOrder,
