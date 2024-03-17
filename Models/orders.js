@@ -51,7 +51,6 @@ const ordersSchema = new Schema({
         ref: 'Products',
         validate: {
             validator: function(value) {
-                console.log(value)
                 return !(value.length !== 0 && this.customeImage);
             },
             message: 'If set product dont set custom product'

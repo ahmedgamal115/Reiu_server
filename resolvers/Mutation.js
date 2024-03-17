@@ -112,6 +112,7 @@ module.exports = {
     addPromoCode: async(parent, args, {Models})=>{
         let newPromoCode = Models.promocodes({
             code: args.code,
+            amount: args.amount,
             discount: args.discount,
             expire: new Date(args.expire).toString(),
         })

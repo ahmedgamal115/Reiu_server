@@ -37,7 +37,8 @@ module.exports = gql`
     type PromoCodes{
         id: ID!
         code: String!
-        discount: Float!
+        amount: Float
+        discount: Float
         expire: DateTime!
         expired: Boolean
         createdAt: DateTime!
@@ -70,7 +71,7 @@ module.exports = gql`
         deleteProduct( id: ID! ): String!
         updateProduct( id: ID!, image: [Upload!], productSize: ID, price: Float, oldImage: [String!]! ) : Product!
 
-        addPromoCode(code: String!,discount: Float!,expire: String!): PromoCodes!
+        addPromoCode(code: String!,amount: Float, discount: Float,expire: String!): PromoCodes!
         deletePromoCode( id: ID! ): String!
         updatePromoCode( id: ID!,code: String!,discount: Float!,expire: String! ): PromoCodes!
     

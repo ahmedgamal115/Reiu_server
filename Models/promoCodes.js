@@ -6,17 +6,31 @@ const promoCodesSchema = new Schema({
         require: true,
         index: {unique: true}
     },
+    amount: {
+        type: Number,
+        validate: {
+            validator: function(value) {
+                return !(this.discount);
+            },
+            message: 'If set discount dont set amount'
+        }
+    },
     discount: {
         type: Number,
-        require: true,
+        validate: {
+            validator: function(value) {
+                return !(this.amount);
+            },
+            message: 'If set amount dont set discount'
+        }
     },
     expire: {
         type: Date,
-        require: true,
+        required: true,
     },
     expired: {
         type: Boolean,
-        require: true,
+        required: true,
         default: false
     },
 },{timestamps:true})
