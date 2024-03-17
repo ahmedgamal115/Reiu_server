@@ -10,7 +10,7 @@ const promoCodesSchema = new Schema({
         type: Number,
         validate: {
             validator: function(value) {
-                return !(this.discount);
+                return !(value && this.discount);
             },
             message: 'If set discount dont set amount'
         }
@@ -19,7 +19,7 @@ const promoCodesSchema = new Schema({
         type: Number,
         validate: {
             validator: function(value) {
-                return !(this.amount);
+                return !(value && this.amount);
             },
             message: 'If set amount dont set discount'
         }
